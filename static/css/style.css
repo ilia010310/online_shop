@@ -1,0 +1,233 @@
+html, body{
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #edeef0;
+    overflow-x: hidden;
+}
+
+.navbar{
+    margin-bottom: 0;
+}
+
+.wrapper{
+    min-height: 100%;
+}
+
+.wrapper-content{
+    padding-bottom: 180px; /* must be same height as the footer */
+}
+
+
+
+.section-top{
+    margin-bottom: 20px
+}
+
+.product-description-tabs{
+    padding: 10px;
+}
+
+.section{
+    padding: 50px 0;
+}
+
+.section h1{
+    margin-bottom: 40px;
+}
+
+.product-item{
+    height: 410px;
+    background-color: white;
+    border: 0.4px solid black;
+    position: relative;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.add-to-card-btn{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.section-delivery{
+    height: 300px;
+    background-color: yellow;
+    text-align: center;
+    color: white;
+}
+
+.product-image-item{
+    height = 20%;
+    padding: 5px;
+    margin-bottom: 3px;
+
+
+
+}
+
+.navbar-top{
+    min-height: 10px;
+    height: 20px;
+    background-color: yellow;
+    border: none;
+    border-radius: 0;
+}
+
+.navbar-main{
+    background-color: #151414;
+    border: none;
+    border-radius: 0;
+}
+
+.basket-container{
+    position: absolute;
+    width: 400px;
+    padding: 15px 10px;
+
+}
+.basket-container a{
+    color: #ffc61c
+}
+
+.basket-container a:hover {
+    color: yellow;
+    text-decoration: none;
+}
+
+.price{
+    text-align: left;
+}
+
+.btn btn-success btn-buy{
+    text-align: right;
+    position: relative;
+}
+
+.img-thumbnail {
+    border: 0px;
+}
+
+}
+.form-group{
+    text-align: right;
+}
+
+.basket-items{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: grey;
+    z-index: 10;
+    padding: 10px;
+}
+
+
+
+table.cart {
+    margin-bottom:40px;
+}
+
+table.cart img {
+    width:180px;
+}
+
+.text-right {
+    text-align:right;
+}
+
+thead th, tbody tr.total {
+    background:#5993bb;
+    color:#fff;
+    font-weight:bold;
+}
+
+
+.form-error{
+    color: red;
+}
+
+.img
+
+footer {
+    background-color: #e9ecef; /* Цвет фона футера */
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 10;
+    width: 100%;
+    z-index: 1000; /* Уровень над другими элементами */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Тень футера */
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #151414;
+    height: 10vh;
+    color: #ffc61c;
+}
+
+.author {
+    margin-right: 20px;
+}
+
+.social-links img {
+    width: 20px; /* Регулируйте размер иконок здесь */
+    height: 20px;
+    margin: 0 5px; /* Расстояние между иконками */
+}
+
+.col-lg-6 {
+    padding-right: 20px;
+}
+
+.navbar-default .navbar-brand {
+    color: #ffc61c;
+}
+
+
+
+
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffc61c;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: yellow; /* Замените на нужный вам цвет */
+}
+
+.nav-item
+    color: #ffc61c;
+}
+
+.navbar-default .navbar-brand a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.nav-item {
+    color: #ffc61c;
+}
+
+.nav-item:hover {
+    color: yellow;
+    text-decoration: none;  /* Добавьте эту строку для удаления подчеркивания */
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #ffc61c;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: yellow;
+    text-decoration: none;  /* Добавьте эту строку для удаления подчеркивания */
+}
+
+
+
