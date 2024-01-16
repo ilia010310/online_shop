@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<div class="container mt-5">
+  <h1 class="mb-4">Спасибо!</h1>
+    <form action="" method="post">
+        <h3 class="font-medium text-[20px] leading-6 mb-3">Данные покупателя</h3>
+        <p class="mb-3">Пожалуйста укажите данные о себе, они помогут нам сократить время на обработку и оформление
+            заказа</p>
+        <div class="w-full inline-flex mb-3" role="tablist">
+            <button type="button" class="btn-tab rounded-tr-none rounded-br-none p-1 text-blue-600 hover:text-blue-600 dark:text-blue-500 dark:hover:text-blue-500 border-blue-600 dark:border-blue-500" role="tab" aria-selected="true" wire:click="$set('customer_type', 1)">
+                Физическое лицо
+            </button>
+            <button type="button" class="btn-tab rounded-tl-none rounded-bl-none p-1 dark:border-transparent text-gray-500 hover:text-gray-600 dark:text-gray-400 border-gray-100 hover:border-gray-300 dark:border-gray-700 dark:hover:text-gray-300" role="tab" aria-selected="false" wire:click="$set('customer_type', 2)">
+                Юридическое лицо
+            </button>
+        </div>
+        <div class="mb-6">
+            <div class="-hidden">
+                                    <div class="input-wrap w-full mb-3 ">
+                        <input type="text" class="input" id="name-not-auth-order" autocomplete="off" wire:model="customer_lastname">
+                        <label for="name-not-auth-order">Фамилия Имя Отчество</label>
+                        <span class="value-reset z-10 " wire:click="$set('customer_lastname', '')"></span>
+                    </div>
+                                                                <div class="input-wrap w-full mb-3 ">
+                    <input type="text" class="input" id="email-not-auth-order" autocomplete="off" wire:model="customer_email">
+                    <label for="email-not-auth-order">Электронная почта</label>
+                    <span class="value-reset z-10 " wire:click="$set('customer_email', '')"></span>
+                </div>
+                <div class="input-wrap w-full mb-3 filled">
+                    <input type="text" class="input ordering__phone" id="c_phone" autocomplete="off" wire:model="customer_phone" inputmode="numeric">
+                    <label for="c_phone">Телефон</label>
+                    <span class="value-reset z-10 block" wire:click="$set('customer_phone', '')"></span>
+                </div>
+            </div>
+        </div>
+        <h3 class="mb-3 font-medium text-[20px] leading-6">Оплата</h3>
+        <div class="mb-6">
+            <ul class="ordering__list">
+    <li class="ordering__tarifs">
+    <input class="tarifs__radio" type="radio" id="optimalPayment" name="payment_id" value="6" wire:model="payment_id">
+    <label for="optimalPayment">
+        <span class="ordering__subtitle radio-title">Согласовать с оператором</span>
+        <span class="ordering__status success">Перезвоним</span>
+    </label>
+    <div class="ordering__tarifs__border"></div>
+</li>    <li class="ordering__tarifs">
+    <input class="tarifs__radio" type="radio" id="onlinePayment" name="payment_id" value="4" wire:model="payment_id">
+    <label for="onlinePayment">
+        <span class="ordering__subtitle radio-title">Онлайн-оплата на сайте</span>
+        <span class="ordering__status success"></span>
+    </label>
+    <div class="ordering__tarifs__border"></div>
+</li>
+            <li class="ordering__tarifs">
+    <input class="tarifs__radio" type="radio" id="courierPayment" name="payment_id" value="3" wire:model="payment_id">
+    <label for="courierPayment">
+        <span class="ordering__subtitle radio-title">При получении</span>
+        <span class="ordering__status success">Наличными или картой</span>
+    </label>
+    <div class="ordering__tarifs__border"></div>
+</li>        </ul>        </div>
+        <h3 class="mb-3 font-medium text-[20px] leading-6">Комментарий к заказу</h3>
+        <div class="input-wrap w-full mb-6 ">
+            <textarea class="input h-24 resize-none" id="comment-not-auth-order" autocomplete="off" wire:model="order_customer_comment"></textarea>
+            <label for="comment-not-auth-order">Текст комментария</label>
+            <span class="value-reset z-10 " wire:click="$set('order_customer_comment', '')"></span>
+        </div>
+                <button type="button" class="btn btn-primary w-full mb-2" wire:click.prevent="submitCheckout">Отправить
+        </button>
+    </form>
+
+
+
+</div>
+{% endblock %}

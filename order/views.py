@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from cart.cart import Cart
 
-# Create your views here.
+
+def order(request):
+
+
+    return render(request, 'order.html')

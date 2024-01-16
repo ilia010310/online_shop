@@ -62,8 +62,12 @@
 
   <div class="text-end">
     <p class="lead">Итого: {{ cart.get_total_price|intcomma }} руб.</p>
-    <button type="button" class="btn btn-primary">Оформить заказ</button>
+    <a href="{% url 'order:order' %}" class="btn btn-primary">Оформить заказ</a>
+
+
   </div>
+
+
 </div>
 <script>
     // Обрабатываем событие изменения ввода
