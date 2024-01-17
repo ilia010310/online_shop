@@ -34,7 +34,7 @@ class Item(models.Model):
 
 class ItemImages(models.Model):
     item = models.ForeignKey(Item, blank=True, null=True, default=None, on_delete=models.CASCADE, related_name='images')
-    image = models.ImageField(upload_to='item_images/')
+    image = models.ImageField(upload_to='item_images/', verbose_name='Картинка')
     is_main = models.BooleanField(default=False, verbose_name='Главная')
     is_active = models.BooleanField(default=True, verbose_name='Активная')
     created = models.DateTimeField(auto_now_add=True, auto_now=False)

@@ -17,9 +17,13 @@ class Status(models.Model):
         verbose_name = 'Статус'
         verbose_name_plural = 'Статусы'
 class Order(models.Model):
-    total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0)
+    total_price = models.DecimalField(max_digits=10, decimal_places=0,
+                                      default=0, blank=True, null=True,
+                                      verbose_name='Общая стоимость')
     customer_name = models.CharField(max_length=80)
     customer_email = models.EmailField()
+    customer_phone = models.CharField(max_length=12)
+    customer_inn = models.CharField(max_length=12, blank=True, null=True)
     comments = models.TextField(blank=True, null=True, default=None)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
@@ -33,14 +37,17 @@ class Order(models.Model):
         verbose_name_plural = 'Заказы'
 
 class ItemsInOrder(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orders')
-    item = models.ForeignKey(Item, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
-    price_per_item = models.DecimalField(max_digits=10, decimal_places=0, default=0)
-    total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='orders',
+                              verbose_name='Заказ №')
+    item = models.ForeignKey(Item, on_delete=models.CASCADE, verbose_name='Товар')
+    quantity = models.PositiveIntegerField(default=1, verbose_name='Количество')
+    price_per_item = models.DecimalField(max_digits=10, decimal_places=0, default=0,
+                                         verbose_name='Цена за штуку')
+    total_price = models.DecimalField(max_digits=10, decimal_places=0, default=0,
+                                      verbose_name='Общая стоимость')
     is_active = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
+    updated = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
 
     def __str__(self):
         return self.item.name

@@ -13,6 +13,7 @@ urlpatterns = [
     path('contacts/', TemplateView.as_view(template_name='shop/contacts.html'),
          name='contacts'),
     path('', include('shop.urls', namespace='shop')),
+    path('summernote/', include('django_summernote.urls')),
 ]
 
 if settings.DEBUG:

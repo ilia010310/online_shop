@@ -11,10 +11,10 @@ class ItemsInOrderInline(admin.TabularInline):
 #     list_display = ['id', 'name', 'is_active', 'created', 'updated']
 #     ordering = ['id']
 
-@admin.register(ItemsInOrder)
-class ItemsInOrderAdmin(admin.ModelAdmin):
-    list_display = ['order', 'item', 'quantity', 'created', 'updated' ]
-    ordering = ['id']
+# @admin.register(ItemsInOrder)
+# class ItemsInOrderAdmin(admin.ModelAdmin):
+#     list_display = ['order', 'item', 'quantity', 'created', 'updated' ]
+#     ordering = ['id']
 
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
