@@ -5,7 +5,7 @@ from shop.models import Item
 
 
 class Status(models.Model):
-    name = models.CharField(max_length=80, blank=True, null=True, default=None)
+    name = models.CharField(max_length=80, blank=True, null=True, default='Новый')
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -23,9 +23,9 @@ class Order(models.Model):
     customer_name = models.CharField(max_length=80)
     customer_email = models.EmailField()
     customer_phone = models.CharField(max_length=12)
-    customer_inn = models.CharField(max_length=12, blank=True, null=True)
+    customer_inn = models.CharField(max_length=12, blank=True, null=True, default=None)
     comments = models.TextField(blank=True, null=True, default=None)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, default=1)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

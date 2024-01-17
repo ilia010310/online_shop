@@ -13,10 +13,10 @@ class OrderForm(forms.ModelForm):
     customer_phone = forms.CharField(required=True,
                            widget=forms.TextInput(attrs={"class": "form-control", 'placeholder': 'Телефон',
                                                          'style': 'width: 300px;'}))
-    customer_inn = forms.CharField(required=True,
+    customer_inn = forms.CharField(required=False,
                            widget=forms.TextInput(attrs={"class": "form-control", 'placeholder': 'ИНН (для юр. лиц)',
                                                          'style': 'width: 300px;'}))
-    comments = forms.CharField(required=True,
+    comments = forms.CharField(required=False,
                            widget=forms.TextInput(attrs={"class": "form-control", 'placeholder': 'Комментарий к заказу',
                                                          'style': 'width: 300px; height: 100px;'}))
     class Meta:
