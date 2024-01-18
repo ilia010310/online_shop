@@ -52,8 +52,9 @@
                 </div>
             </div>
             {% endfor %}
-
+             {% include "pagination.html" with page=items_images %}
         </div>
     </div>
+
 </div>
 {% endblock %}

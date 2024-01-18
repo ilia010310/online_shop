@@ -20,14 +20,15 @@ class Order(models.Model):
     total_price = models.DecimalField(max_digits=10, decimal_places=0,
                                       default=0, blank=True, null=True,
                                       verbose_name='Общая стоимость')
-    customer_name = models.CharField(max_length=80)
-    customer_email = models.EmailField()
-    customer_phone = models.CharField(max_length=12)
-    customer_inn = models.CharField(max_length=12, blank=True, null=True, default=None)
-    comments = models.TextField(blank=True, null=True, default=None)
-    status = models.ForeignKey(Status, on_delete=models.CASCADE, default=1)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    customer_name = models.CharField(max_length=80, verbose_name='Имя')
+    customer_email = models.EmailField(verbose_name='Почта')
+    customer_phone = models.CharField(max_length=12, verbose_name='Телефон')
+    customer_inn = models.CharField(max_length=12, blank=True, null=True,
+                                    default=None, verbose_name='ИНН')
+    comments = models.TextField(blank=True, null=True, default=None, verbose_name='Комментарий')
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, default=1, verbose_name='Статус')
+    created = models.DateTimeField(auto_now_add=True, verbose_name='Создано')
+    updated = models.DateTimeField(auto_now=True, verbose_name='Обновлено')
 
     def __str__(self):
         return f'Заказ №{self.id} от {self.customer_name}'

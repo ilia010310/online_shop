@@ -42,8 +42,11 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'order.apps.OrderConfig',
     'django.contrib.humanize',
-    'django_summernote',
 ]
+
+SUMMERNOTE_CONFIG = {
+    'disable_editor_in_admin': True,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
